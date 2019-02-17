@@ -34,3 +34,10 @@ def create_final_dict(input_data, leaf_names):
     input_list = create_list_of_nested_dict(input_data, leaf_names)
     final_dict = merge_dict_with_duplicated_keys(input_list)
     return final_dict
+
+
+def validate_keys_name(keys_list, input_dict):
+    existing_keys = input_dict.keys()
+    for key in keys_list:
+        if key not in existing_keys:
+            raise ValueError("Please provide valid keys")
