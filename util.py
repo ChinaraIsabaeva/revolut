@@ -40,4 +40,11 @@ def validate_keys_name(keys_list, input_dict):
     existing_keys = input_dict.keys()
     for key in keys_list:
         if key not in existing_keys:
-            raise ValueError("Please provide valid keys")
+            raise ValueError(
+                '''Please provide valid keys.
+                Available keys are {correct}
+                Given keys are {incorrect}'''.format(
+                    correct=list(existing_keys),
+                    incorrect=keys_list
+                )
+            )
