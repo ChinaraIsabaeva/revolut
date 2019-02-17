@@ -32,8 +32,7 @@ def create_list_of_nested_dict(input_data):
     return result
 
 
-def create_final_dict(input_data):
-    input_list = create_list_of_nested_dict(input_data)
+def merge_dict_with_duplicated_keys(input_list):
     final_dict = {}
     for item in input_list:
         for key, value in item.items():
@@ -43,6 +42,12 @@ def create_final_dict(input_data):
                 final_dict.update(final_dict_item)
             else:
                 final_dict.update(item)
+    return final_dict
+
+
+def create_final_dict(input_data):
+    input_list = create_list_of_nested_dict(input_data)
+    final_dict = merge_dict_with_duplicated_keys(input_list)
     return final_dict
 
 
