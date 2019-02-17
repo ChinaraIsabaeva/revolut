@@ -1,2 +1,3 @@
 dpath
 flask-restful
+Flask-HTTPAuth
