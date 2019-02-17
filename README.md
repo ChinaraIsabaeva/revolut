@@ -1,6 +1,6 @@
 # revolut
 
-This repo contain both programming tasks.
+This repo contains both programming tasks.
 
 #### Run REST service
 
